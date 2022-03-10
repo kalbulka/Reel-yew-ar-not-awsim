@@ -9,24 +9,31 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
-  
+    
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         messageLabel.text = ""
     }
-
-
+    
     @IBAction func messageButtonPressed(_ sender: UIButton) {
-        print("😎 The message button was pressed!")
-        messageLabel.text = "THE BAtman"
-        imageView.image = UIImage.init(named: "Image0")
+        let batmanMessage = "THE BATMAN"
+        let pooMessage = "poo poo pee pee"
+        let bomMessage = "you ar da bom"
+        
+                if messageLabel.text == batmanMessage {
+            messageLabel.text = pooMessage
+            imageView.image = UIImage.init(named: "image7")
+        }
+        else if messageLabel.text == pooMessage{
+            messageLabel.text = bomMessage
+            imageView.image = UIImage.init(named:"Image0")
     }
-    @IBAction func differentMessageButtonPressed(_ sender: UIButton) {
-        print("different message button was pressed!")
-        messageLabel.text = ("poo poo pee pee")
-        imageView.image = UIImage.init(named: "image7")
+        else{
+            messageLabel.text = batmanMessage
+            imageView.image = UIImage.init(named:"Image2")
+        }
+
     }
 }
-
